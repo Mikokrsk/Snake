@@ -114,8 +114,8 @@ public class Snake : MonoBehaviour
 
         if (tileAtNextPosition != null && (tileAtNextPosition.name == "Wall" || tileAtNextPosition.name == "SnakeBody"))
         {
-            Debug.Log("Game Over");
             isAlive = false;
+            GameManager.instance.SetActiveGameOverMenu(true);
             return;
         }
 
