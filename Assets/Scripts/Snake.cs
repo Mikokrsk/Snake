@@ -148,5 +148,6 @@ public class Snake : MonoBehaviour
         snakePart.transform.position = tilemap.GetCellCenterWorld(snakePart.curentPosition);
         tilemap.SetTile(snakePart.curentPosition, snakePart.tile);
         snakePartsList.Add(newBody);
+        FoodSpawner.instance.SpawnFood();
     }
 }
