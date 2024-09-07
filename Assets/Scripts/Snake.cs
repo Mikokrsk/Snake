@@ -121,6 +121,7 @@ public class Snake : MonoBehaviour
 
         if (tileAtNextPosition != null && tileAtNextPosition.name == "Food")
         {
+            PointsController.instance.AddPoints();
             AddNewBody(snakePart.curentPosition);
         }
 

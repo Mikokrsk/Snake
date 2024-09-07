@@ -41,7 +41,6 @@ public class FoodSpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Cannot spawn food here, finding a new spot.");
             SpawnFood();
         }
     }
