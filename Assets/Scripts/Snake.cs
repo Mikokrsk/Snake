@@ -26,10 +26,10 @@ public class Snake : MonoBehaviour
 
     private void Update()
     {
-        RotateHead(snakePartsList.First(), GetDirection());
+        RotateHead(snakePartsList.First(), GetMoveDirection());
     }
 
-    private Vector3Int GetDirection()
+    private Vector3Int GetMoveDirection()
     {
         var joysticDir = GameManager.instance.joystick.Direction;
         var dirX = joysticDir.x;

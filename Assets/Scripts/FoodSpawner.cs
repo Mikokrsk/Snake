@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 public class FoodSpawner : MonoBehaviour
 {
     public Tilemap tilemap;
-    // public GameObject foodPrefab;
     public Tile foodTile;
     public Vector3Int spawnAreaMin;
     public Vector3Int spawnAreaMax;
@@ -35,8 +34,6 @@ public class FoodSpawner : MonoBehaviour
 
         if (CanSpawnAt(randomPosition))
         {
-            // Vector3 worldPosition = tilemap.CellToWorld(randomPosition);
-            //  Instantiate(foodPrefab, worldPosition, Quaternion.identity);
             tilemap.SetTile(randomPosition, foodTile);
         }
         else
