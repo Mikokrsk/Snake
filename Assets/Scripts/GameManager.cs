@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     public void SetActiveGameOverMenu(bool active)
     {
         gameOverMenu.SetActive(active);
+        gameOverMenu.GetComponent<CanvasGroup>().alpha = active ? 1 : 0;
+        gameOverMenu.GetComponent<CanvasGroup>().blocksRaycasts = active;
     }
 
     public void ResetLevel()
