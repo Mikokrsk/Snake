@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverMenu;
+    public VariableJoystick joystick;
     public static GameManager instance;
 
     private void Awake()
@@ -23,6 +24,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SetActiveGameOverMenu(false);
+        joystick = VariableJoystick.Instance;
+        joystick.SetActive(true);
+    }
+
+    public void GameOver()
+    {
+        SetActiveGameOverMenu(true);
+        joystick.SetActive(false);
     }
 
     public void SetActiveGameOverMenu(bool active)

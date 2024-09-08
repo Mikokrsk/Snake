@@ -25,25 +25,29 @@ public class Snake : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        RotateHead(snakePartsList.First(), GetDirection());
+    }
+
+    private Vector3Int GetDirection()
+    {
+        var joysticDir = GameManager.instance.joystick.Direction;
+        var dirX = joysticDir.x;
+        var dirY = joysticDir.y;
+        var direction = currentDirection;
+
+        if (dirX != 0 && dirY != 0)
         {
-            RotateHead(snakePartsList.First(), Vector3Int.up);
+            if (Mathf.Abs(dirX) >= Mathf.Abs(dirY))
+            {
+                direction = dirX > 0 ? Vector3Int.right : Vector3Int.left;
+            }
+            else
+            {
+                direction = dirY > 0 ? Vector3Int.up : Vector3Int.down;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            RotateHead(snakePartsList.First(), Vector3Int.down);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            RotateHead(snakePartsList.First(), Vector3Int.left);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            RotateHead(snakePartsList.First(), Vector3Int.right);
-        }
+        return direction;
     }
 
     private void RotateHead(GameObject snakePart, Vector3Int direction)
@@ -81,7 +85,6 @@ public class Snake : MonoBehaviour
         {
             yield return new WaitForSeconds(gameSpeed);
 
-            //foreach (var snakePartObj in snakePartsList)
             var nextPosition = Vector3Int.zero;
 
             for (int i = 0; i < snakePartsList.Count && isAlive; i++)
@@ -115,7 +118,7 @@ public class Snake : MonoBehaviour
         if (tileAtNextPosition != null && (tileAtNextPosition.name == "Wall" || tileAtNextPosition.name == "SnakeBody"))
         {
             isAlive = false;
-            GameManager.instance.SetActiveGameOverMenu(true);
+            GameManager.instance.GameOver();
             return;
         }
 

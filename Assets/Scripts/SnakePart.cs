@@ -12,8 +12,6 @@ public class SnakePart : MonoBehaviour
 
     [SerializeField] public Tile tile;
     [SerializeField] public Vector3Int curentPosition;
-    //   [SerializeField] public Vector3Int nextPosition;
-
 }
 
 public enum SnakePartName
