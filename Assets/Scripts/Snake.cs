@@ -14,7 +14,8 @@ public class Snake : MonoBehaviour
     [SerializeField] protected Tilemap tilemap;
     [SerializeField] protected Vector3Int nextDirection;
     [SerializeField] protected Vector3Int currentDirection;
-
+    [SerializeField] private Animator animator;
+    private readonly string snakeGameOverName = "GameOver";
     private void Start()
     {
         nextDirection = Vector3Int.left;
@@ -119,6 +120,7 @@ public class Snake : MonoBehaviour
         {
             isAlive = false;
             GameManager.instance.GameOver();
+            animator.SetTrigger(snakeGameOverName);
             return;
         }
 

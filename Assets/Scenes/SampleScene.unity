@@ -254,7 +254,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4527167065195890260, guid: a098a63e90e4500449ba1b57a3b5af0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 176905268}
   m_SourcePrefab: {fileID: 100100000, guid: a098a63e90e4500449ba1b57a3b5af0c, type: 3}
 --- !u!1 &176905264 stripped
 GameObject:
@@ -266,6 +269,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9180320585283639542, guid: a098a63e90e4500449ba1b57a3b5af0c, type: 3}
   m_PrefabInstance: {fileID: 176905263}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &176905268
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176905264}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79d8c391706a27841858162c9ec82b0c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &251803644
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +396,7 @@ MonoBehaviour:
   tilemap: {fileID: 300822055}
   nextDirection: {x: 0, y: 0, z: 0}
   currentDirection: {x: 0, y: 0, z: 0}
-  joystick: {fileID: 1438162895}
+  animator: {fileID: 176905268}
 --- !u!1 &300822052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +1985,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 267578152}
     m_Modifications:
+    - target: {fileID: -9090420230433245401, guid: 584464e5d0db37740b0073151f3f4d3a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c21f547777904d1479c6bcb9fc26132a, type: 3}
     - target: {fileID: -3894608046840473105, guid: 584464e5d0db37740b0073151f3f4d3a, type: 3}
       propertyPath: nextPosition.x
       value: 1
@@ -2328,17 +2356,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333192816}
   m_CullTransparentMesh: 1
---- !u!114 &1438162895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230, type: 3}
-  m_PrefabInstance: {fileID: 942416864}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42844a4fccbd54746b90cade4ff70f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1438162898 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230, type: 3}
@@ -2507,6 +2524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 1333192816}
+  joystick: {fileID: 0}
 --- !u!4 &1868607588
 Transform:
   m_ObjectHideFlags: 0
