@@ -199,6 +199,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 267578152}
     m_Modifications:
+    - target: {fileID: -9090420230433245401, guid: a098a63e90e4500449ba1b57a3b5af0c, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -9090420230433245401, guid: a098a63e90e4500449ba1b57a3b5af0c, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4527167065195890260, guid: a098a63e90e4500449ba1b57a3b5af0c, type: 3}
       propertyPath: m_Name
       value: SnakeHead
@@ -2033,7 +2041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1333192817
 RectTransform:
   m_ObjectHideFlags: 0
